@@ -1,0 +1,183 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html {
+	height: 100%;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(-45deg, #3ab4a0, #2eb4b0, #1db4fd, #455efc);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 400vh;
+}
+@keyframes gradient{
+    0% {background-position: 0 50%;}
+    50% {background-position: 100% 50%;}
+    100%{ background-position: 0% 50%;}
+}
+header{ 
+    padding: 40px;
+}
+.header{
+    display: flex;
+    justify-content: end;
+    padding: 0 10px 0 0;
+}
+.header input{
+    margin: 0 auto;
+    width: 40%;
+    height: 10%;
+}
+button{
+    position: absolute;
+    border: none;
+    color: #ffffff;
+    width: 9em;
+    height: 3em;
+    line-height: 2em;
+    text-align: center;
+    background: linear-gradient(90deg, #FF3CAC, #784BA0, #2B86C5, #030A75);
+    background-size: 300%;
+    text-transform: uppercase;
+    cursor: pointer;
+    z-index: 1;
+}
+button:hover{
+    animation: animation 8s linear infinite;
+    border: none;
+}
+@keyframes animation{
+    0% {background-position: 0%;}
+    100% {background-position: 400%;}
+}
+button::before{
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient( 90deg, #FF3CAC, #784BA0, #2B86C5, #030A75);
+    background-size: 400%;
+    border-radius: 35px;
+    transition: 1s;
+}
+button:hover::before{
+    filter: blur(20px);
+}
+
+.navbar{
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    padding-top: 10px;
+}
+.navbar a{
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: aliceblue;
+    display: block;
+}
+.container{
+    line-height: 40px;
+}
+.block{
+    padding: 90px 0 20px 0;
+}
+.block2{
+    padding: 20px 0 0 0;
+}
+.block2 p{
+    padding: 10px;
+    font-size: 26px;
+}
+
+.carousel{
+    display: flex;
+    -webkit-mask: linear-gradient(90deg, #0000,#000 10% 90%, #0000);
+}
+.gallery{
+    --d: 10s;
+    display: grid;
+    overflow: hidden;
+    height: fit-content;
+    width: fit-content;
+    margin: 0 auto;
+}
+.gallery2{
+    --d: 10s;
+    display: grid;
+    overflow: hidden;
+    height: fit-content;
+    width: fit-content;
+    margin: 0 auto;
+}
+.gallery{
+    animation: carousel 3000s linear infinite;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100vw;
+}
+.gallery2{
+    animation: carousel 3000s linear infinite;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100vw;
+}
+.top{
+    flex-shrink: 0;
+    width: 150px;
+    margin: 50px auto;
+}
+@keyframes carousel{
+    0%   { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-20000px, 0, 0); }
+}
